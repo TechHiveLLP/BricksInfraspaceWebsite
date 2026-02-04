@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+
+const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -24,13 +27,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-red-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BI</span>
-              </div>
-              <div>
-                <span className="text-xl font-bold text-white">Bricks</span>
-                <span className="text-xl font-bold text-red-500">Infraspace</span>
+            <Link href="/" className="inline-block mb-6">
+              <div className="bg-white rounded-lg p-2">
+                <Image
+                  src={`${basePath}/logo.jpeg`}
+                  alt="Bricks Infraspace"
+                  width={120}
+                  height={32}
+                  className="h-12 w-auto"
+                />
               </div>
             </Link>
             <p className="text-gray-400 leading-relaxed">
