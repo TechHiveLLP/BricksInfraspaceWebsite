@@ -13,10 +13,10 @@ const quickLinks = [
 ];
 
 const services = [
-  "Construction Consultancy",
-  "Turnkey Contracting",
-  "Project Management",
-  "Heritage Restoration",
+  { name: "Construction Consultancy", href: "/services#construction-consultancy" },
+  { name: "Turnkey Contracting", href: "/services#turnkey-contracting" },
+  { name: "Project Management", href: "/services#project-management" },
+  { name: "Heritage Restoration", href: "/services#heritage-restoration" },
 ];
 
 export default function Footer() {
@@ -65,12 +65,12 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Our Services</h3>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
+                <li key={service.name}>
                   <Link
-                    href="/services"
+                    href={service.href}
                     className="text-gray-400 hover:text-red-500 transition-colors"
                   >
-                    {service}
+                    {service.name}
                   </Link>
                 </li>
               ))}

@@ -3,6 +3,7 @@ import CTASection from "@/components/CTASection";
 
 const services = [
   {
+    id: "construction-consultancy",
     icon: FileCheck,
     title: "Construction Consultancy",
     description: "We provide comprehensive construction consultancy services to support projects from initial concept to final completion. Our team assists with feasibility studies, technical due diligence, design coordination, statutory approvals, and cost planning. By combining strong technical expertise with practical execution knowledge, we help clients make informed decisions and achieve compliant, efficient, and successful project outcomes.",
@@ -16,6 +17,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
+    id: "turnkey-contracting",
     icon: Building2,
     title: "Turnkey Contracting",
     description: "Our turnkey contracting services offer a complete, end-to-end construction solution with single-point responsibility. We manage the entire process from planning and coordination to execution and handover ensuring projects are delivered within defined timelines and budgets. This integrated approach ensures quality control, seamless coordination, and peace of mind for our clients.",
@@ -29,6 +31,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
+    id: "project-management",
     icon: ClipboardList,
     title: "Project Management",
     description: "We deliver structured project management services focused on time, cost, and quality control. Our scope includes detailed planning, scheduling, contractor coordination, on-site supervision, and progress monitoring. Through proactive management and transparent reporting, we ensure smooth execution, risk mitigation, and timely delivery of projects.",
@@ -42,6 +45,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
+    id: "heritage-restoration",
     icon: Landmark,
     title: "Heritage Restoration",
     description: "We specialize in heritage restoration and Transfer of Development Rights (TDR) generation and trading, combining sensitivity with technical precision. Our team works to preserve architectural and historical value while ensuring regulatory compliance. Through strategic TDR planning and execution, we help clients unlock development potential and maximize the value of their assets.",
@@ -77,8 +81,9 @@ export default function ServicesPage() {
           <div className="space-y-24">
             {services.map((service, index) => (
               <div
+                id={service.id}
                 key={index}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
+                className={`scroll-mt-24 grid lg:grid-cols-2 gap-12 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
