@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -42,7 +44,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo.jpeg"
+                src={`${basePath}/logo.jpeg`}
                 alt="Bricks Infraspace"
                 width={180}
                 height={50}
