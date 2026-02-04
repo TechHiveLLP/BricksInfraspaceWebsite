@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["Mumbai, Maharashtra, India"],
+    details: ["Ahmedabad, Gujarat, India"],
   },
   {
     icon: Phone,
