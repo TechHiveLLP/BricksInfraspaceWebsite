@@ -25,12 +25,12 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-red-700 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">BI</span>
               </div>
               <div>
                 <span className="text-xl font-bold text-white">Bricks</span>
-                <span className="text-xl font-bold text-amber-500">Infraspace</span>
+                <span className="text-xl font-bold text-red-500">Infraspace</span>
               </div>
             </Link>
             <p className="text-gray-400 leading-relaxed">
@@ -46,7 +46,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-amber-500 transition-colors"
+                    className="text-gray-400 hover:text-red-500 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -63,7 +63,7 @@ export default function Footer() {
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-gray-400 hover:text-amber-500 transition-colors"
+                    className="text-gray-400 hover:text-red-500 transition-colors"
                   >
                     {service}
                   </Link>
@@ -77,25 +77,25 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={20} className="text-amber-500 shrink-0 mt-1" />
+                <MapPin size={20} className="text-red-500 shrink-0 mt-1" />
                 <span className="text-gray-400">
                   Mumbai, Maharashtra, India
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={20} className="text-amber-500 shrink-0" />
-                <a href="tel:+919876543210" className="text-gray-400 hover:text-amber-500 transition-colors">
+                <Phone size={20} className="text-red-500 shrink-0" />
+                <a href="tel:+919876543210" className="text-gray-400 hover:text-red-500 transition-colors">
                   +91 98765 43210
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={20} className="text-amber-500 shrink-0" />
-                <a href="mailto:info@bricksinfraspace.com" className="text-gray-400 hover:text-amber-500 transition-colors">
+                <Mail size={20} className="text-red-500 shrink-0" />
+                <a href="mailto:info@bricksinfraspace.com" className="text-gray-400 hover:text-red-500 transition-colors">
                   info@bricksinfraspace.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Clock size={20} className="text-amber-500 shrink-0" />
+                <Clock size={20} className="text-red-500 shrink-0" />
                 <span className="text-gray-400">Mon - Sat: 9:00 AM - 6:00 PM</span>
               </li>
             </ul>
@@ -111,8 +111,8 @@ export default function Footer() {
               © {new Date().getFullYear()} BricksInfraspace. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-gray-500">
-              <Link href="#" className="hover:text-amber-500 transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-amber-500 transition-colors">Terms of Service</Link>
+              <Link href="#" className="hover:text-red-500 transition-colors">Privacy Policy</Link>
+              <Link href="#" className="hover:text-red-500 transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

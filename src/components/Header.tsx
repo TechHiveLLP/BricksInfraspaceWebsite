@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
 const navLinks = [
@@ -18,19 +19,19 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Top Bar */}
-      <div className="bg-amber-600 text-white text-sm py-2 hidden md:block">
+      <div className="bg-red-700 text-white text-sm py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-amber-100 transition-colors">
+            <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-red-100 transition-colors">
               <Phone size={14} />
               <span>+91 98765 43210</span>
             </a>
-            <a href="mailto:info@bricksinfraspace.com" className="flex items-center gap-2 hover:text-amber-100 transition-colors">
+            <a href="mailto:info@bricksinfraspace.com" className="flex items-center gap-2 hover:text-red-100 transition-colors">
               <Mail size={14} />
               <span>info@bricksinfraspace.com</span>
             </a>
           </div>
-          <p className="text-amber-100">Building Better Tomorrow</p>
+          <p className="text-red-100">Building Better Tomorrow</p>
         </div>
       </div>
 
@@ -39,14 +40,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BI</span>
-              </div>
-              <div>
-                <span className="text-xl font-bold text-gray-900">Bricks</span>
-                <span className="text-xl font-bold text-amber-600">Infraspace</span>
-              </div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.jpeg"
+                alt="Bricks Infraspace"
+                width={180}
+                height={50}
+                className="h-12 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -55,7 +57,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-600 hover:text-amber-600 font-medium transition-colors"
+                  className="text-gray-600 hover:text-red-700 font-medium transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -66,7 +68,7 @@ export default function Header() {
             <div className="hidden md:block">
               <Link
                 href="/contact"
-                className="bg-amber-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-amber-700 transition-colors"
+                className="bg-red-700 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-red-800 transition-colors"
               >
                 Get a Quote
               </Link>
@@ -91,7 +93,7 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block text-gray-600 hover:text-amber-600 font-medium py-2"
+                  className="block text-gray-600 hover:text-red-700 font-medium py-2"
                 >
                   {link.name}
                 </Link>
@@ -99,7 +101,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block bg-amber-600 text-white px-6 py-3 rounded-lg font-medium text-center mt-4"
+                className="block bg-red-700 text-white px-6 py-3 rounded-lg font-medium text-center mt-4"
               >
                 Get a Quote
               </Link>

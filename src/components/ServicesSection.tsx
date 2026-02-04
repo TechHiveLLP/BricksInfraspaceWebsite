@@ -30,7 +30,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
             What We Offer
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
@@ -49,8 +49,8 @@ export default function ServicesSection() {
               key={index}
               className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow group"
             >
-              <div className="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
-                <service.icon className="text-amber-600 group-hover:text-white transition-colors" size={28} />
+              <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-red-700 transition-colors">
+                <service.icon className="text-red-700 group-hover:text-white transition-colors" size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {service.title}
@@ -66,7 +66,7 @@ export default function ServicesSection() {
         <div className="text-center mt-12">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+            className="inline-flex items-center gap-2 bg-red-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-800 transition-colors"
           >
             View All Services
             <ArrowRight size={20} />

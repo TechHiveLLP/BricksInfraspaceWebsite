@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="bg-gray-900 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About <span className="text-amber-500">Us</span>
+            About <span className="text-red-500">Us</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Learn about our journey, our values, and the team that makes it all possible
@@ -36,7 +36,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
                 Who We Are
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
@@ -67,13 +67,13 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-amber-600">
+      <section className="py-16 bg-red-700">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {journey.map((stat, index) => (
               <div key={index} className="text-center">
                 <p className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</p>
-                <p className="text-amber-100">{stat.label}</p>
+                <p className="text-red-100">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
                 Leadership
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
@@ -116,8 +116,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-xl p-8">
-              <div className="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                <Target className="text-amber-600" size={28} />
+              <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                <Target className="text-red-700" size={28} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -126,8 +126,8 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="bg-gray-50 rounded-xl p-8">
-              <div className="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                <Eye className="text-amber-600" size={28} />
+              <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                <Eye className="text-red-700" size={28} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -143,7 +143,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
               What We Stand For
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
@@ -153,8 +153,8 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
             {values.map((value, index) => (
               <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm">
-                <div className="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="text-amber-600" size={28} />
+                <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <value.icon className="text-red-700" size={28} />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{value.title}</h3>
                 <p className="text-gray-600 text-sm">{value.description}</p>

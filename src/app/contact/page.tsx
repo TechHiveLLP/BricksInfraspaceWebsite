@@ -56,7 +56,7 @@ export default function ContactPage() {
       <section className="bg-gray-900 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Contact <span className="text-amber-500">Us</span>
+            Contact <span className="text-red-500">Us</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Get in touch for project inquiries, consultations, or collaborations
@@ -85,8 +85,8 @@ export default function ContactPage() {
                     key={index}
                     className="bg-gray-50 rounded-xl p-6"
                   >
-                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                      <info.icon className="text-amber-600" size={24} />
+                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                      <info.icon className="text-red-700" size={24} />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {info.title}
@@ -123,7 +123,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
                     placeholder="Your name"
                   />
                 </div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
                     placeholder="+91 98765 43210"
                   />
                 </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-amber-600 text-white py-4 rounded-lg font-semibold hover:bg-amber-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+                  className="w-full bg-red-700 text-white py-4 rounded-lg font-semibold hover:bg-red-800 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     "Sending..."

@@ -79,7 +79,7 @@ export default function ProjectsPage() {
       <section className="bg-gray-900 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-amber-500">Projects</span>
+            Our <span className="text-red-500">Projects</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Explore our portfolio of successfully delivered and ongoing projects
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
               Portfolio
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-2">
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-amber-400 text-sm font-medium">{project.type}</span>
+                  <span className="text-red-400 text-sm font-medium">{project.type}</span>
                   <h3 className="text-white font-bold text-xl">{project.name}</h3>
                 </div>
               </div>
@@ -124,7 +124,7 @@ export default function ProjectsPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
               In Progress
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-2">
@@ -143,11 +143,11 @@ export default function ProjectsPage() {
                   className="w-full h-56 object-cover"
                 />
                 <div className="p-6">
-                  <span className="text-amber-600 text-sm font-medium">{project.type}</span>
+                  <span className="text-red-700 text-sm font-medium">{project.type}</span>
                   <h3 className="text-gray-900 font-bold text-xl mt-1 mb-4">{project.name}</h3>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
                     <div
-                      className="bg-amber-600 h-3 rounded-full"
+                      className="bg-red-700 h-3 rounded-full"
                       style={{ width: `${project.progress}%` }}
                     />
                   </div>
@@ -163,7 +163,7 @@ export default function ProjectsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
               Specialized Work
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-2">

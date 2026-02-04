@@ -24,15 +24,15 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-amber-600/20 border border-amber-600/30 rounded-full px-4 py-2 mb-6">
-            <span className="w-2 h-2 rounded-full bg-amber-500" />
-            <span className="text-amber-400 text-sm font-medium">35+ Years of Group Experience</span>
+          <div className="inline-flex items-center gap-2 bg-red-700/20 border border-red-700/30 rounded-full px-4 py-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-red-500" />
+            <span className="text-red-400 text-sm font-medium">35+ Years of Group Experience</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Building Better{" "}
-            <span className="text-amber-500">Tomorrow</span>
+            <span className="text-red-500">Tomorrow</span>
           </h1>
 
           {/* Description */}
@@ -46,7 +46,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-red-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-800 transition-colors"
             >
               Start Your Project
               <ArrowRight size={20} />
@@ -64,7 +64,7 @@ export default function Hero() {
             {stats.map((stat, index) => (
               <div key={index} className="text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-                  <stat.icon className="text-amber-500" size={20} />
+                  <stat.icon className="text-red-500" size={20} />
                   <span className="text-3xl font-bold text-white">{stat.value}</span>
                 </div>
                 <span className="text-gray-400 text-sm">{stat.label}</span>

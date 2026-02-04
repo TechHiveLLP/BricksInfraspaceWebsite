@@ -48,7 +48,7 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
             Our Portfolio
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
@@ -76,7 +76,7 @@ export default function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-amber-400 text-sm font-medium">{project.type}</span>
+                  <span className="text-red-400 text-sm font-medium">{project.type}</span>
                   <h4 className="text-white font-bold text-lg">{project.name}</h4>
                 </div>
               </div>
@@ -93,11 +93,11 @@ export default function ProjectsSection() {
                 key={index}
                 className="bg-gray-50 rounded-xl p-6"
               >
-                <span className="text-amber-600 text-sm font-medium">{project.type}</span>
+                <span className="text-red-700 text-sm font-medium">{project.type}</span>
                 <h4 className="text-gray-900 font-bold text-lg mt-1 mb-4">{project.name}</h4>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div 
-                    className="bg-amber-600 h-2 rounded-full" 
+                    className="bg-red-700 h-2 rounded-full" 
                     style={{ width: `${project.progress}%` }}
                   />
                 </div>

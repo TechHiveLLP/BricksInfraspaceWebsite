@@ -28,15 +28,15 @@ export default function AboutSection() {
               />
             </div>
             {/* Experience Badge */}
-            <div className="absolute bottom-4 left-4 bg-amber-600 text-white rounded-lg p-6 shadow-xl">
+            <div className="absolute bottom-4 left-4 bg-red-700 text-white rounded-lg p-6 shadow-xl">
               <span className="text-4xl font-bold">35+</span>
-              <span className="block text-amber-100">Years Experience</span>
+              <span className="block text-red-100">Years Experience</span>
             </div>
           </div>
 
           {/* Content */}
           <div>
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
               About Us
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
@@ -57,7 +57,7 @@ export default function AboutSection() {
             <ul className="space-y-3 mb-8">
               {highlights.map((item, index) => (
                 <li key={index} className="flex items-center gap-3">
-                  <CheckCircle className="text-amber-600 shrink-0" size={20} />
+                  <CheckCircle className="text-red-700 shrink-0" size={20} />
                   <span className="text-gray-700">{item}</span>
                 </li>
               ))}
@@ -65,7 +65,7 @@ export default function AboutSection() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 transition-colors"
+              className="inline-flex items-center gap-2 text-red-700 font-semibold hover:text-red-800 transition-colors"
             >
               Learn More About Us
               <ArrowRight size={20} />

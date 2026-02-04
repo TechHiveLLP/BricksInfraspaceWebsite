@@ -63,7 +63,7 @@ export default function ServicesPage() {
       <section className="bg-gray-900 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-amber-500">Services</span>
+            Our <span className="text-red-500">Services</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Comprehensive construction consultancy and contracting services tailored to your needs
@@ -83,8 +83,8 @@ export default function ServicesPage() {
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                    <service.icon className="text-amber-600" size={28} />
+                  <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                    <service.icon className="text-red-700" size={28} />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
                     {service.title}
@@ -95,7 +95,7 @@ export default function ServicesPage() {
                   <ul className="space-y-3">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-3">
-                        <CheckCircle className="text-amber-600 shrink-0" size={20} />
+                        <CheckCircle className="text-red-700 shrink-0" size={20} />
                         <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
