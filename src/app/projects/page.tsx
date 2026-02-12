@@ -3,138 +3,22 @@
 import { useState } from "react";
 import CTASection from "@/components/CTASection";
 import ProjectGallery from "@/components/ProjectGallery";
+import { projectImages, ProjectKey } from "@/config/projectImages";
 
-const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
-
-const completedProjects = [
-  {
-    name: "Dutron Corporate House",
-    type: "Commercial",
-    image: `${basePath}/photos for website /completed projects /dutron (completed project )/IMG_8692.jpg`,
-    images: [
-      `${basePath}/photos for website /completed projects /dutron (completed project )/IMG_8692.jpg`,
-      `${basePath}/photos for website /completed projects /dutron (completed project )/DJI_0044.jpg`,
-    ],
-  },
-  {
-    name: "ICAI Bhavan",
-    type: "Institutional",
-    image: `${basePath}/photos for website /completed projects /icai/icai.jpg`,
-    images: [
-      `${basePath}/photos for website /completed projects /icai/icai.jpg`,
-      `${basePath}/photos for website /completed projects /icai/IMG_5761.JPG`,
-      `${basePath}/photos for website /completed projects /icai/IMG_5762.JPG`,
-    ],
-  },
-  {
-    name: "Credai Garden",
-    type: "Residential",
-    image: `${basePath}/photos for website /completed projects /credai /IMG_8735.jpg`,
-    images: [
-      `${basePath}/photos for website /completed projects /credai /IMG_8735.jpg`,
-      `${basePath}/photos for website /completed projects /credai /a3d004b2-b577-49f1-a447-9d75ac44db26.jpg`,
-      `${basePath}/photos for website /completed projects /credai /unnamed.webp`,
-    ],
-  },
-  {
-    name: "HR Group",
-    type: "Commercial",
-    image: `${basePath}/photos for website /completed projects /hr Group/hr_group.jpg`,
-    images: [
-      `${basePath}/photos for website /completed projects /hr Group/hr_group.jpg`,
-      `${basePath}/photos for website /completed projects /hr Group/0c37f324-f551-4c75-a7b3-e93f293f4c03.jpg`,
-      `${basePath}/photos for website /completed projects /hr Group/fe75134e-b422-49dd-ae1c-82cadc25eb41.jpg`,
-    ],
-  },
+const completedProjects: { name: string; type: string; imageKey: ProjectKey }[] = [
+  { name: "Dutron Corporate House", type: "Commercial", imageKey: "dutron-corporate" },
+  { name: "ICAI Bhavan", type: "Institutional", imageKey: "icai" },
+  { name: "Credai Garden", type: "Residential", imageKey: "credai" },
+  { name: "HR Group", type: "Commercial", imageKey: "hr-group" },
 ];
 
-const ongoingProjects = [
-  {
-    name: "Anantbaug Villas",
-    type: "Residential",
-    progress: 75,
-    image: `${basePath}/photos for website /ongoing projects /Anantbaug Villas/1.png`,
-    images: [
-      `${basePath}/photos for website /ongoing projects /Anantbaug Villas/1.png`,
-      `${basePath}/photos for website /ongoing projects /Anantbaug Villas/image.png`,
-    ],
-  },
-  {
-    name: "Anjani Group",
-    type: "Commercial",
-    progress: 60,
-    image: `${basePath}/photos for website /ongoing projects /anjani group/IMG_6971.JPG`,
-    images: [
-      `${basePath}/photos for website /ongoing projects /anjani group/IMG_6971.JPG`,
-      `${basePath}/photos for website /ongoing projects /anjani group/IMG_6973.JPG`,
-    ],
-  },
-  {
-    name: "Dutron",
-    type: "Commercial",
-    progress: 70,
-    image: `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.27 PM (1).jpeg`,
-    images: [
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.27 PM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /IMG_8680.jpg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.25 PM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.26 PM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.26 PM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.27 PM (2).jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.27 PM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.28 PM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.28 PM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /dutron /WhatsApp Image 2026-02-03 at 3.15.29 PM.jpeg`,
-    ],
-  },
-  {
-    name: "Shivalik",
-    type: "Institutional",
-    progress: 45,
-    image: `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.08 AM.jpeg`,
-    images: [
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.08 AM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.08 AM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.09 AM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.10 AM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.10 AM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.11 AM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.11 AM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.12 AM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.12 AM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.13 AM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.13 AM.jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.14 AM (1).jpeg`,
-      `${basePath}/photos for website /ongoing projects /shivalik/WhatsApp Image 2025-08-21 at 11.12.14 AM.jpeg`,
-    ],
-  },
-  {
-    name: "Suryam - By The Waters",
-    type: "Residential",
-    progress: 55,
-    image: `${basePath}/photos for website /ongoing projects /Suryam- By The Waters/1.png`,
-    images: [
-      `${basePath}/photos for website /ongoing projects /Suryam- By The Waters/1.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam- By The Waters/2.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam- By The Waters/3.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam- By The Waters/4.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam- By The Waters/5.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam- By The Waters/image.png`,
-    ],
-  },
-  {
-    name: "Suryam - By Sage",
-    type: "Residential",
-    progress: 40,
-    image: `${basePath}/photos for website /ongoing projects /Suryam-by sage/image.png`,
-    images: [
-      `${basePath}/photos for website /ongoing projects /Suryam-by sage/image.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam-by sage/image 1.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam-by sage/image2.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam-by sage/image3.png`,
-      `${basePath}/photos for website /ongoing projects /Suryam-by sage/image4.png`,
-    ],
-  },
+const ongoingProjects: { name: string; type: string; progress: number; imageKey: ProjectKey }[] = [
+  { name: "Anantbaug Villas", type: "Residential", progress: 75, imageKey: "anantbaug" },
+  { name: "Anjani Group", type: "Commercial", progress: 60, imageKey: "anjani" },
+  { name: "Dutron", type: "Commercial", progress: 70, imageKey: "dutron-ongoing" },
+  { name: "Shivalik", type: "Institutional", progress: 45, imageKey: "shivalik" },
+  { name: "Suryam - By The Waters", type: "Residential", progress: 55, imageKey: "suryam-waters" },
+  { name: "Suryam - By Sage", type: "Residential", progress: 40, imageKey: "suryam-sage" },
 ];
 
 interface SelectedProject {
@@ -190,10 +74,10 @@ export default function ProjectsPage() {
               <div
                 key={index}
                 className="group relative rounded-xl overflow-hidden cursor-pointer"
-                onClick={() => openGallery(project.name, project.images)}
+                onClick={() => openGallery(project.name, [...projectImages[project.imageKey]])}
               >
                 <img
-                  src={project.image}
+                  src={projectImages[project.imageKey][0]}
                   alt={project.name}
                   className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -216,7 +100,7 @@ export default function ProjectsPage() {
                         d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <span>View {project.images.length} photos</span>
+                    <span>View {projectImages[project.imageKey].length} photos</span>
                   </div>
                 </div>
               </div>
@@ -241,11 +125,11 @@ export default function ProjectsPage() {
               <div
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-sm cursor-pointer group hover:shadow-lg transition-shadow"
-                onClick={() => openGallery(project.name, project.images)}
+                onClick={() => openGallery(project.name, [...projectImages[project.imageKey]])}
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={project.image}
+                    src={projectImages[project.imageKey][0]}
                     alt={project.name}
                     className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -265,7 +149,7 @@ export default function ProjectsPage() {
                           d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                         />
                       </svg>
-                      <span className="text-gray-700 font-medium">View {project.images.length} photos</span>
+                      <span className="text-gray-700 font-medium">View {projectImages[project.imageKey].length} photos</span>
                     </div>
                   </div>
                 </div>
