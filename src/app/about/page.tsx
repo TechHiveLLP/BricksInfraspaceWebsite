@@ -12,8 +12,6 @@ const values = [
 const journey = [
   { value: "35+", label: "Years Experience" },
   { value: "25M+", label: "Sq. Ft. Delivered" },
-  { value: "150+", label: "Projects Completed" },
-  { value: "500+", label: "Happy Clients" },
 ];
 
 export default function AboutPage() {
@@ -68,8 +66,8 @@ export default function AboutPage() {
 
       {/* Stats */}
       <section className="py-16 bg-red-700">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="grid grid-cols-2 gap-8">
             {journey.map((stat, index) => (
               <div key={index} className="text-center">
                 <p className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</p>

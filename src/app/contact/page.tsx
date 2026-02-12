@@ -12,12 +12,12 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 98765 43210"],
+    details: ["+91 89800 37007"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@bricksinfraspace.com"],
+    details: ["bricksinfraspace@gmail.com"],
   },
   {
     icon: Clock,
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 89800 37007"
                   />
                 </div>
 

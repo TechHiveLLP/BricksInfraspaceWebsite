@@ -3,23 +3,18 @@ import { FileCheck, Building2, ClipboardList, Landmark, ArrowRight } from "lucid
 
 const services = [
   {
-    icon: FileCheck,
-    title: "Construction Consultancy",
-    description: "Comprehensive consultancy services from concept to completion including feasibility studies, technical due diligence, design coordination, and statutory approvals.",
-  },
-  {
     icon: Building2,
     title: "Turnkey Contracting",
     description: "Complete end-to-end construction solutions with single-point responsibility from planning and coordination to execution and handover.",
   },
   {
-    icon: ClipboardList,
-    title: "Project Management",
-    description: "Structured project management focused on time, cost, and quality control with detailed planning, scheduling, and progress monitoring.",
+    icon: FileCheck,
+    title: "Construction Consultancy",
+    description: "Comprehensive consultancy services from concept to completion including feasibility studies, technical due diligence, design coordination, and statutory approvals.",
   },
   {
     icon: Landmark,
-    title: "Heritage Restoration",
+    title: "Heritage Restoration and TDR Generation",
     description: "Specialized heritage restoration and TDR generation services, combining sensitivity with technical precision to preserve architectural value.",
   },
 ];
@@ -43,7 +38,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}

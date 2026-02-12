@@ -15,8 +15,7 @@ const quickLinks = [
 const services = [
   { name: "Construction Consultancy", href: "/services#construction-consultancy" },
   { name: "Turnkey Contracting", href: "/services#turnkey-contracting" },
-  { name: "Project Management", href: "/services#project-management" },
-  { name: "Heritage Restoration", href: "/services#heritage-restoration" },
+  { name: "Heritage Restoration and TDR Generation", href: "/services#heritage-restoration-and-tdr-generation" },
 ];
 
 export default function Footer() {
@@ -84,24 +83,20 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-red-500 shrink-0 mt-1" />
                 <span className="text-gray-400">
-                  Ahmedabad, Gujarat, India
+                  603 Shapath 5, Opp Karnavati Club, Sarkhej - Gandhinagar Hwy, Ahmedabad, Gujarat, 380060
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-red-500 shrink-0" />
-                <a href="tel:+919876543210" className="text-gray-400 hover:text-red-500 transition-colors">
-                  +91 98765 43210
+                <a href="tel:+918980037007" className="text-gray-400 hover:text-red-500 transition-colors">
+                  +91 89800 37007
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-red-500 shrink-0" />
-                <a href="mailto:info@bricksinfraspace.com" className="text-gray-400 hover:text-red-500 transition-colors">
-                  info@bricksinfraspace.com
+                <a href="mailto:bricksinfraspace@gmail.com" className="text-gray-400 hover:text-red-500 transition-colors">
+                  bricksinfraspace@gmail.com
                 </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Clock size={20} className="text-red-500 shrink-0" />
-                <span className="text-gray-400">Mon - Sat: 9:00 AM - 6:00 PM</span>
               </li>
             </ul>
           </div>

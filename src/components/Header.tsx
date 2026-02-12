@@ -11,8 +11,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "Projects", href: "/projects" }
 ];
 
 export default function Header() {
@@ -24,13 +23,13 @@ export default function Header() {
       <div className="bg-red-700 text-white text-sm py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-red-100 transition-colors">
+            <a href="tel:+918980037007" className="flex items-center gap-2 hover:text-red-100 transition-colors">
               <Phone size={14} />
-              <span>+91 98765 43210</span>
+              <span>+91 89800 37007</span>
             </a>
-            <a href="mailto:info@bricksinfraspace.com" className="flex items-center gap-2 hover:text-red-100 transition-colors">
+            <a href="mailto:bricksinfraspace@gmail.com" className="flex items-center gap-2 hover:text-red-100 transition-colors">
               <Mail size={14} />
-              <span>info@bricksinfraspace.com</span>
+              <span>bricksinfraspace@gmail.com</span>
             </a>
           </div>
           <p className="text-red-100">Building Better Tomorrow</p>
@@ -72,7 +71,7 @@ export default function Header() {
                 href="/contact"
                 className="bg-red-700 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-red-800 transition-colors"
               >
-                Get a Quote
+                Contact Us
               </Link>
             </div>
 
@@ -105,7 +104,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block bg-red-700 text-white px-6 py-3 rounded-lg font-medium text-center mt-4"
               >
-                Get a Quote
+                Contact Us
               </Link>
             </div>
           </div>
