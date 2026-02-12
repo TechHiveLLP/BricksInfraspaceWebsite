@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 interface ProjectGalleryProps {
   isOpen: boolean;
@@ -17,6 +17,7 @@ export default function ProjectGallery({
 }: ProjectGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const prevIsOpenRef = useRef(isOpen);
 
   const goToPrevious = useCallback(() => {
     setIsLoading(true);
@@ -28,9 +29,15 @@ export default function ProjectGallery({
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   }, [images.length]);
 
+  // Reset index when gallery opens (track previous state to detect open transition)
+  if (isOpen && !prevIsOpenRef.current) {
+    setCurrentIndex(0);
+    setIsLoading(true);
+  }
+  prevIsOpenRef.current = isOpen;
+
   useEffect(() => {
     if (isOpen) {
-      setCurrentIndex(0);
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
