@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface ProjectGalleryProps {
   isOpen: boolean;
@@ -17,6 +17,16 @@ export default function ProjectGallery({
 }: ProjectGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+
+  const goToPrevious = useCallback(() => {
+    setIsLoading(true);
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  }, [images.length]);
+
+  const goToNext = useCallback(() => {
+    setIsLoading(true);
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  }, [images.length]);
 
   useEffect(() => {
     if (isOpen) {
@@ -39,17 +49,7 @@ export default function ProjectGallery({
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, currentIndex, images.length]);
-
-  const goToPrevious = () => {
-    setIsLoading(true);
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const goToNext = () => {
-    setIsLoading(true);
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  }, [isOpen, onClose, goToPrevious, goToNext]);
 
   if (!isOpen) return null;
 

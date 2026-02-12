@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileCheck, Building2, ClipboardList, Landmark, ArrowRight } from "lucide-react";
+import { FileCheck, Building2, Landmark, ArrowRight } from "lucide-react";
 
 const services = [
   {
