@@ -12,7 +12,7 @@ const completedProjects = [
   {
     name: "ICAI Bhavan",
     type: "Institutional",
-    image: `${basePath}/photos for website /completed projects /icai/2024-02-05.JPG`,
+    image: `${basePath}/photos for website /completed projects /icai/2024-02-05.jpg`,
   },
   {
     name: "Credai Garden",
