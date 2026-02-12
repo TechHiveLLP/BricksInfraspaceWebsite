@@ -199,6 +199,7 @@ export default function ProjectsPage() {
 
       {/* Gallery Modal */}
       <ProjectGallery
+        key={selectedProject?.name || "closed"}
         isOpen={selectedProject !== null}
         onClose={closeGallery}
         projectName={selectedProject?.name || ""}

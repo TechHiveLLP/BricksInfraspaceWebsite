@@ -1,4 +1,4 @@
-import { FileCheck, Building2, ClipboardList, Landmark, CheckCircle } from "lucide-react";
+import { FileCheck, Building2, Landmark, CheckCircle } from "lucide-react";
 import CTASection from "@/components/CTASection";
 
 const services = [

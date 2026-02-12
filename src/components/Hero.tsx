@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Building2, Users, Award, Briefcase } from "lucide-react";
+import { ArrowRight, Building2, Award } from "lucide-react";
 
 const stats = [
   { icon: Award, value: "35+", label: "Years Experience" },

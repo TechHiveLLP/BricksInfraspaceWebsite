@@ -1,5 +1,4 @@
-import { CheckCircle, Target, Eye, Shield, Award, Clock, Heart, Users } from "lucide-react";
-import Image from "next/image";
+import { Target, Eye, Shield, Award, Clock, Heart } from "lucide-react";
 import CTASection from "@/components/CTASection";
 
 const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
