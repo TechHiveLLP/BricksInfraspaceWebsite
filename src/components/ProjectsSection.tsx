@@ -1,34 +1,36 @@
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
+
 const completedProjects = [
   {
     name: "Dutron Corporate House",
     type: "Commercial",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: `${basePath}/photos for website /completed projects /dutron (completed project )/IMG_8692.jpg`,
   },
   {
     name: "ICAI Bhavan",
     type: "Institutional",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: `${basePath}/photos for website /completed projects /icai/2024-02-05.JPG`,
   },
   {
     name: "Credai Garden",
     type: "Residential",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: `${basePath}/photos for website /completed projects /credai /IMG_8735.jpg`,
   },
   {
-    name: "Parichay Corporate House",
+    name: "HR Group",
     type: "Commercial",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: `${basePath}/photos for website /completed projects /hr Group/hr_group.jpg`,
   },
 ];
 
 const ongoingProjects = [
   {
-    name: "HR Group",
-    type: "Commercial",
-    progress: 65,
+    name: "Anatbaug Villas",
+    type: "Residential",
+    progress: 10,
   },
   {
     name: "Shivalik Institute of Real Estate",
@@ -38,7 +40,7 @@ const ongoingProjects = [
   {
     name: "Savy Civic - Medercial One",
     type: "Mixed Use",
-    progress: 30,
+    progress: 80,
   },
 ];
 

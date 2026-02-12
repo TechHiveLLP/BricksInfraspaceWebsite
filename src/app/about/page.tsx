@@ -1,5 +1,8 @@
 import { CheckCircle, Target, Eye, Shield, Award, Clock, Heart, Users } from "lucide-react";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
+
+const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
 
 const values = [
   { icon: Shield, title: "Integrity", description: "Honest and ethical practices in all business dealings" },
@@ -101,9 +104,11 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="bg-gray-200 rounded-xl w-full h-96 flex items-center justify-center">
-                <span className="text-gray-500">Founder Photo</span>
-              </div>
+              <img
+                src={`${basePath}/photos for website /preet_s photo/foundersphoto.jpg`}
+                alt="Preet Doshi - Founder"
+                className="rounded-xl w-full h-96 object-contain"
+              />
             </div>
           </div>
         </div>
