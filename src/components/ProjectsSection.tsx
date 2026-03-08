@@ -1,48 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
-const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
-
-const completedProjects = [
-  {
-    name: "Dutron Corporate House",
-    type: "Commercial",
-    image: `${basePath}/photos for website /completed projects /dutron (completed project )/IMG_8692.jpg`,
-  },
-  {
-    name: "ICAI Bhavan",
-    type: "Institutional",
-    image: `${basePath}/photos for website /completed projects /icai/icai.jpg`,
-  },
-  {
-    name: "Credai Garden",
-    type: "Residential",
-    image: `${basePath}/photos for website /completed projects /credai /IMG_8735.jpg`,
-  },
-  {
-    name: "HR Group",
-    type: "Commercial",
-    image: `${basePath}/photos for website /completed projects /hr Group/hr_group.jpg`,
-  },
-];
-
-const ongoingProjects = [
-  {
-    name: "Anatbaug Villas",
-    type: "Residential",
-    progress: 10,
-  },
-  {
-    name: "Shivalik Institute of Real Estate",
-    type: "Institutional",
-    progress: 45,
-  },
-  {
-    name: "Savy Civic - Medercial One",
-    type: "Mixed Use",
-    progress: 80,
-  },
-];
+import {
+  featuredCompleted,
+  featuredOngoing,
+  getProjectCover,
+} from "@/config/projects";
 
 export default function ProjectsSection() {
   return (
@@ -66,13 +28,13 @@ export default function ProjectsSection() {
         <div className="mb-16">
           <h3 className="text-xl font-bold text-gray-900 mb-8">Completed Projects</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {completedProjects.map((project, index) => (
+            {featuredCompleted.map((project, index) => (
               <div
                 key={index}
                 className="group relative rounded-xl overflow-hidden"
               >
                 <img
-                  src={project.image}
+                  src={getProjectCover(project)}
                   alt={project.name}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -90,7 +52,7 @@ export default function ProjectsSection() {
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-8">Ongoing Projects</h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {ongoingProjects.map((project, index) => (
+            {featuredOngoing.map((project, index) => (
               <div
                 key={index}
                 className="bg-gray-50 rounded-xl p-6"
@@ -100,10 +62,10 @@ export default function ProjectsSection() {
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div 
                     className="bg-red-700 h-2 rounded-full" 
-                    style={{ width: `${project.progress}%` }}
+                    style={{ width: `${project.progress ?? 0}%` }}
                   />
                 </div>
-                <span className="text-gray-500 text-sm">{project.progress}% Complete</span>
+                <span className="text-gray-500 text-sm">{project.progress ?? 0}% Complete</span>
               </div>
             ))}
           </div>

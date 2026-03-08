@@ -89,7 +89,7 @@ export default function AboutPage() {
                 Leadership
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
-                Founder & Leadership
+                Founder
               </h2>
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Preet Doshi</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
@@ -113,11 +113,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Co-Founder */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <img
+                src={`${basePath}/photos for website /nilam_s photo/IMG_6287.jpg`}
+                alt="Nilam Doshi - Co-founder"
+                className="rounded-xl w-full h-96 object-contain"
+              />
+            </div>
+            <div>
+              <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
+                Leadership
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
+                Co-Founder
+              </h2>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Nilam Doshi</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                A visionary leader in real estate and urban development with over three 
+                decades of industry experience. A Civil Engineering graduate from LD College 
+                of Engineering, he has played key leadership roles at CREDAI Gujarat, CREDAI 
+                National, and CREDAI Ahmedabad GIHED.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                He has also served as Past Chairman of the Real Estate and Infra Committee at 
+                GCCI and contributed to the National Building Code Committee. His work reflects 
+                a deep commitment to sustainable urban growth, infrastructure excellence, and 
+                industry innovation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-xl p-8">
+            <div className="bg-white rounded-xl p-8">
               <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <Target className="text-red-700" size={28} />
               </div>
@@ -127,7 +163,7 @@ export default function AboutPage() {
                 while maintaining the highest standards of quality and professionalism.
               </p>
             </div>
-            <div className="bg-gray-50 rounded-xl p-8">
+            <div className="bg-white rounded-xl p-8">
               <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
                 <Eye className="text-red-700" size={28} />
               </div>
@@ -142,7 +178,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">

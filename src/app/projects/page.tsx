@@ -3,23 +3,13 @@
 import { useState } from "react";
 import CTASection from "@/components/CTASection";
 import ProjectGallery from "@/components/ProjectGallery";
-import { projectImages, ProjectKey } from "@/config/projectImages";
-
-const completedProjects: { name: string; type: string; imageKey: ProjectKey }[] = [
-  { name: "Dutron Corporate House", type: "Commercial", imageKey: "dutron-corporate" },
-  { name: "ICAI Bhavan", type: "Institutional", imageKey: "icai" },
-  { name: "Credai Garden", type: "Residential", imageKey: "credai" },
-  { name: "HR Group", type: "Commercial", imageKey: "hr-group" },
-];
-
-const ongoingProjects: { name: string; type: string; progress: number; imageKey: ProjectKey }[] = [
-  { name: "Anantbaug Villas", type: "Residential", progress: 75, imageKey: "anantbaug" },
-  { name: "Anjani Group", type: "Commercial", progress: 60, imageKey: "anjani" },
-  { name: "Dutron", type: "Commercial", progress: 70, imageKey: "dutron-ongoing" },
-  { name: "Shivalik", type: "Institutional", progress: 45, imageKey: "shivalik" },
-  { name: "Suryam - By The Waters", type: "Residential", progress: 55, imageKey: "suryam-waters" },
-  { name: "Suryam - By Sage", type: "Residential", progress: 40, imageKey: "suryam-sage" },
-];
+import {
+  completedProjects,
+  ongoingProjects,
+  getProjectImages,
+  getProjectCover,
+  Project,
+} from "@/config/projects";
 
 interface SelectedProject {
   name: string;
@@ -36,8 +26,9 @@ const heritageImages = [
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<SelectedProject | null>(null);
 
-  const openGallery = (name: string, images: string[]) => {
-    setSelectedProject({ name, images });
+  const openGallery = (project: Project) => {
+    const images = getProjectImages(project);
+    setSelectedProject({ name: project.name, images });
   };
 
   const closeGallery = () => {
@@ -70,14 +61,16 @@ export default function ProjectsPage() {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {completedProjects.map((project, index) => (
+            {completedProjects.map((project, index) => {
+              const images = getProjectImages(project);
+              return (
               <div
                 key={index}
                 className="group relative rounded-xl overflow-hidden cursor-pointer"
-                onClick={() => openGallery(project.name, [...projectImages[project.imageKey]])}
+                onClick={() => openGallery(project)}
               >
                 <img
-                  src={projectImages[project.imageKey][0]}
+                  src={getProjectCover(project)}
                   alt={project.name}
                   className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -100,11 +93,12 @@ export default function ProjectsPage() {
                         d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <span>View {projectImages[project.imageKey].length} photos</span>
+                    <span>View {images.length} photo{images.length !== 1 ? "s" : ""}</span>
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -121,15 +115,17 @@ export default function ProjectsPage() {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {ongoingProjects.map((project, index) => (
+            {ongoingProjects.map((project, index) => {
+              const images = getProjectImages(project);
+              return (
               <div
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-sm cursor-pointer group hover:shadow-lg transition-shadow"
-                onClick={() => openGallery(project.name, [...projectImages[project.imageKey]])}
+                onClick={() => openGallery(project)}
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={projectImages[project.imageKey][0]}
+                    src={getProjectCover(project)}
                     alt={project.name}
                     className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -149,7 +145,7 @@ export default function ProjectsPage() {
                           d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                         />
                       </svg>
-                      <span className="text-gray-700 font-medium">View {projectImages[project.imageKey].length} photos</span>
+                      <span className="text-gray-700 font-medium">View {images.length} photo{images.length !== 1 ? "s" : ""}</span>
                     </div>
                   </div>
                 </div>
@@ -159,13 +155,14 @@ export default function ProjectsPage() {
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
                     <div
                       className="bg-red-700 h-3 rounded-full"
-                      style={{ width: `${project.progress}%` }}
+                      style={{ width: `${project.progress ?? 0}%` }}
                     />
                   </div>
-                  <span className="text-gray-500 text-sm">{project.progress}% Complete</span>
+                  <span className="text-gray-500 text-sm">{project.progress ?? 0}% Complete</span>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

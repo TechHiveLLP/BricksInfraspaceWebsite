@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["Ahmedabad, Gujarat, India"],
+    details: ["603 Shapath 5, Opp Karnavati Club, Sarkhej - Gandhinagar Hwy, Ahmedabad, Gujarat, 380060"],
   },
   {
     icon: Phone,
@@ -19,11 +19,11 @@ const contactInfo = [
     title: "Email Us",
     details: ["bricksinfraspace@gmail.com"],
   },
-  {
-    icon: Clock,
-    title: "Working Hours",
-    details: ["Mon - Sat: 9:00 AM - 6:00 PM"],
-  },
+  // {
+  //   icon: Clock,
+  //   title: "Working Hours",
+  //   details: ["Mon - Sat: 9:00 AM - 6:00 PM"],
+  // },
 ];
 
 export default function ContactPage() {
