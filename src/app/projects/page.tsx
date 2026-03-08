@@ -3,9 +3,11 @@
 import { useState } from "react";
 import CTASection from "@/components/CTASection";
 import ProjectGallery from "@/components/ProjectGallery";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import {
   completedProjects,
   ongoingProjects,
+  heritageItems,
   getProjectImages,
   getProjectCover,
   Project,
@@ -16,12 +18,7 @@ interface SelectedProject {
   images: string[];
 }
 
-const heritageImages = [
-  "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-];
+
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<SelectedProject | null>(null);
@@ -170,23 +167,25 @@ export default function ProjectsPage() {
       {/* Heritage Restoration */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12">
+          <div className="mb-4">
             <span className="text-red-700 font-semibold text-sm uppercase tracking-wider">
               Specialized Work
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-2">
               Heritage Restoration
             </h2>
+            <p className="text-gray-500 mt-3 max-w-2xl">
+              Drag the slider to see the transformation — restoring heritage structures to their former glory.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {heritageImages.map((image, index) => (
-              <div key={index} className="rounded-xl overflow-hidden">
-                <img
-                  src={image}
-                  alt={`Heritage Restoration ${index + 1}`}
-                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            {heritageItems.map((item, index) => (
+              <BeforeAfterSlider
+                key={index}
+                before={item.before}
+                after={item.after}
+                label={item.label}
+              />
             ))}
           </div>
         </div>
