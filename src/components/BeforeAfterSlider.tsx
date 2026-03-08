@@ -15,7 +15,18 @@ export default function BeforeAfterSlider({
 }: BeforeAfterSliderProps) {
   const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [containerWidth, setContainerWidth] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver(([entry]) => {
+      setContainerWidth(entry.contentRect.width);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const getPosition = useCallback(
     (clientX: number) => {
@@ -94,9 +105,7 @@ export default function BeforeAfterSlider({
             alt="Before restoration"
             className="absolute inset-0 w-full h-full object-cover"
             style={{
-              width: containerRef.current
-                ? `${containerRef.current.offsetWidth}px`
-                : "100vw",
+              width: containerWidth ? `${containerWidth}px` : "100vw",
               maxWidth: "none",
             }}
             draggable={false}
