@@ -3,8 +3,9 @@
 
 const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
 
-// Helper function to generate image paths
-const img = (folder: string, filename: string) => `${basePath}/${folder}/${filename}`;
+// Helper function to generate image paths (encodes spaces for URLs)
+const img = (folder: string, filename: string) =>
+  encodeURI(`${basePath}/${folder}/${filename}`);
 
 // Completed Projects
 const completedBase = "photos for website /completed projects ";

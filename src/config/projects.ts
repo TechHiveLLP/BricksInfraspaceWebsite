@@ -140,13 +140,15 @@ export interface HeritageItem {
   label: string;
 }
 
+const heritageBase = `${basePath}/photos for website /heritage`;
+
 export const heritageItems: HeritageItem[] = [
-  { before: "/photos for website /heritage/before/1.png", after: "/photos for website /heritage/after/1.png", label: "Restoration 1" },
-  { before: "/photos for website /heritage/before/2.png", after: "/photos for website /heritage/after/2.png", label: "Restoration 2" },
-  { before: "/photos for website /heritage/before/3.jpg", after: "/photos for website /heritage/after/3.jpg", label: "Restoration 3" },
-  { before: "/photos for website /heritage/before/4.jpg", after: "/photos for website /heritage/after/4.jpg", label: "Restoration 4" },
-  { before: "/photos for website /heritage/before/5.png", after: "/photos for website /heritage/after/5.png", label: "Restoration 5" },
-  { before: "/photos for website /heritage/before/6.png", after: "/photos for website /heritage/after/6.png", label: "Restoration 6" },
+  { before: encodeURI(`${heritageBase}/before/1.png`), after: encodeURI(`${heritageBase}/after/1.png`), label: "Restoration 1" },
+  { before: encodeURI(`${heritageBase}/before/2.png`), after: encodeURI(`${heritageBase}/after/2.png`), label: "Restoration 2" },
+  { before: encodeURI(`${heritageBase}/before/3.jpg`), after: encodeURI(`${heritageBase}/after/3.jpg`), label: "Restoration 3" },
+  { before: encodeURI(`${heritageBase}/before/4.jpg`), after: encodeURI(`${heritageBase}/after/4.jpg`), label: "Restoration 4" },
+  { before: encodeURI(`${heritageBase}/before/5.png`), after: encodeURI(`${heritageBase}/after/5.png`), label: "Restoration 5" },
+  { before: encodeURI(`${heritageBase}/before/6.png`), after: encodeURI(`${heritageBase}/after/6.png`), label: "Restoration 6" },
 ];
 
 // ─── Aggregates & Helpers ────────────────────────────────────────────
