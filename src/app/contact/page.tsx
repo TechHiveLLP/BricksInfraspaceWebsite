@@ -35,19 +35,44 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const WEB3FORMS_CONTACT_KEY = "e1a3b11b-877c-4856-bfb7-01e37ef26a52"; // TODO: Replace with your Web3Forms access key for bricksinfraspace@gmail.com
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    
-    setTimeout(() => setSubmitted(false), 5000);
+    setError("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_CONTACT_KEY,
+          subject: `New Contact Inquiry from ${formData.name}`,
+          from_name: "Bricks Infraspace Website",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "Not provided",
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Something went wrong. Please try again or email us directly.");
+      }
+    } catch {
+      setError("Failed to send message. Please check your internet connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -110,6 +135,12 @@ export default function ContactPage() {
                   <p className="text-green-700 font-medium">
                     Thank you! Your message has been sent. We&apos;ll get back to you soon.
                   </p>
+                </div>
+              )}
+
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                  <p className="text-red-700 font-medium">{error}</p>
                 </div>
               )}
 

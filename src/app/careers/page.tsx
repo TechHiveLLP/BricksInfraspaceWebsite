@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Send, Upload, Users, Target, Heart, Lightbulb, Shield } from "lucide-react";
+import { Mail, Send, Linkedin, Users, Target, Heart, Lightbulb, Shield } from "lucide-react";
 
 const values = [
   {
@@ -31,32 +31,47 @@ export default function CareersPage() {
     fullName: "",
     email: "",
     phone: "",
-    resume: null as File | null,
+    linkedin: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [resumeFileName, setResumeFileName] = useState("");
+  const [error, setError] = useState("");
+
+  const WEB3FORMS_CAREERS_KEY = "36b97add-0818-4219-b68a-d736c5bfe7f4";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ fullName: "", email: "", phone: "", resume: null });
-    setResumeFileName("");
-    
-    setTimeout(() => setSubmitted(false), 5000);
-  };
+    setError("");
 
-  const handleResumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setFormData({ ...formData, resume: file });
-      setResumeFileName(file.name);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_CAREERS_KEY,
+          subject: `New Job Application from ${formData.fullName}`,
+          from_name: "Bricks Infraspace Careers",
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          linkedin: formData.linkedin,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ fullName: "", email: "", phone: "", linkedin: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Something went wrong. Please try again or email us directly at bricksinfra.hr@gmail.com");
+      }
+    } catch {
+      setError("Failed to submit application. Please check your internet connection and try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -176,6 +191,10 @@ export default function CareersPage() {
             </h2>
             <p className="text-gray-600">
               Ready to join our team? Fill out the form below and we&apos;ll get back to you.
+              You can also email your resume directly to{" "}
+              <a href="mailto:bricksinfra.hr@gmail.com" className="text-red-700 font-medium hover:underline">
+                bricksinfra.hr@gmail.com
+              </a>
             </p>
           </div>
 
@@ -185,6 +204,12 @@ export default function CareersPage() {
                 <p className="text-green-700 font-medium text-center">
                   Thank you for your application! Our HR team will review it and get back to you soon.
                 </p>
+              </div>
+            )}
+
+            {error && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                <p className="text-red-700 font-medium text-center">{error}</p>
               </div>
             )}
 
@@ -233,22 +258,20 @@ export default function CareersPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Resume *
+                  LinkedIn Profile
                 </label>
                 <div className="relative">
-                  <input
-                    type="file"
-                    required
-                    accept=".pdf,.doc,.docx"
-                    onChange={handleResumeChange}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
-                  <div className="w-full px-4 py-4 rounded-lg border border-gray-200 border-dashed bg-white flex items-center justify-center gap-2 text-gray-500 hover:border-red-400 hover:bg-red-50 transition cursor-pointer">
-                    <Upload size={20} />
-                    <span>{resumeFileName || "Upload your resume (PDF, DOC, DOCX)"}</span>
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <Linkedin size={20} className="text-gray-400" />
                   </div>
+                  <input
+                    type="url"
+                    value={formData.linkedin}
+                    onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+                    className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
+                    placeholder="https://linkedin.com/in/your-profile"
+                  />
                 </div>
-                <p className="text-xs text-gray-400 mt-2">Max file size: 5MB</p>
               </div>
 
               <button
@@ -269,6 +292,7 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
+
     </>
   );
 }
