@@ -60,14 +60,16 @@ export default function BeforeAfterSlider({
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => handleMove(e.clientX);
-    const handleTouchMove = (e: TouchEvent) =>
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
       handleMove(e.touches[0].clientX);
+    };
     const handleEnd = () => setIsDragging(false);
 
     if (isDragging) {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", handleEnd);
-      window.addEventListener("touchmove", handleTouchMove);
+      window.addEventListener("touchmove", handleTouchMove, { passive: false });
       window.addEventListener("touchend", handleEnd);
     }
 
@@ -84,6 +86,7 @@ export default function BeforeAfterSlider({
       <div
         ref={containerRef}
         className="relative w-full aspect-[4/3] rounded-xl overflow-hidden cursor-col-resize select-none shadow-lg"
+        style={{ touchAction: "none" }}
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
       >
@@ -126,7 +129,7 @@ export default function BeforeAfterSlider({
           style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
         >
           {/* Handle */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-10 sm:h-10 bg-white rounded-full shadow-lg flex items-center justify-center pointer-events-none ring-4 ring-white/30">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 text-gray-700"
