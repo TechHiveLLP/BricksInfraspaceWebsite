@@ -1,7 +1,7 @@
 import { Target, Eye, Shield, Award, Clock, Heart } from "lucide-react";
 import CTASection from "@/components/CTASection";
 
-const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
+const basePath = "";
 
 const values = [
   { icon: Shield, title: "Integrity", description: "Honest and ethical practices in all business dealings" },

@@ -1,7 +1,7 @@
 // Project images configuration
 // To add new images, simply add them to the appropriate array below
 
-const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
+const basePath = "";
 
 // Helper function to generate image paths (encodes spaces for URLs)
 const img = (folder: string, filename: string) =>

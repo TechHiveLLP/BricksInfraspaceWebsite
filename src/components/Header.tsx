@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
-const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
+const basePath = "";
 
 const navLinks = [
   { name: "Home", href: "/" },

@@ -116,7 +116,7 @@ export const ongoingProjects: Project[] = [
 
 // ─── Helper utilities ───────────────────────────────────────────────
 
-const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
+const basePath = "";
 export const placeholderImage = `${basePath}/placeholder-project.svg`;
 
 /** Get the images array for a project, falling back to placeholder */
