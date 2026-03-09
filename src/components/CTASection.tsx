@@ -24,7 +24,7 @@ export default function CTASection() {
               <ArrowRight size={20} />
             </Link>
             <a
-              href="tel:+919876543210"
+              href="tel:+918980037007"
               className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors"
             >
               <Phone size={20} />
