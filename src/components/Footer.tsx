@@ -111,9 +111,22 @@ export default function Footer() {
             <p className="text-gray-300 text-sm">
               © {new Date().getFullYear()} BricksInfraspace. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-gray-300">
-              <Link href="#" className="hover:text-red-400 transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-red-400 transition-colors">Terms of Service</Link>
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-sm text-gray-300">
+              <div className="flex gap-6">
+                <Link href="#" className="hover:text-red-400 transition-colors">Privacy Policy</Link>
+                <Link href="#" className="hover:text-red-400 transition-colors">Terms of Service</Link>
+              </div>
+              <span className="text-gray-400">
+                Built by{" "}
+                <a
+                  href="https://tech-hive.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-red-400 transition-colors"
+                >
+                  TechHive LLP
+                </a>
+              </span>
             </div>
           </div>
         </div>
