@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import { Target, Eye, Shield, Award, Clock, Heart } from "lucide-react";
 import CTASection from "@/components/CTASection";
+
+export const metadata: Metadata = {
+  title: "About Us | Bricks Infraspace - 35+ Years of Construction Excellence",
+  description:
+    "Founded by Preet Doshi and Nilam Doshi, Bricks Infraspace brings 35+ years of group experience and 5M+ sq. ft. delivered across residential, commercial, and infrastructure projects in Gujarat.",
+  openGraph: {
+    title: "About Us | Bricks Infraspace",
+    description:
+      "Founded by Preet Doshi and Nilam Doshi, Bricks Infraspace brings 35+ years of group experience and 5M+ sq. ft. delivered across residential, commercial, and infrastructure projects in Gujarat.",
+  },
+};
 
 const basePath = "";
 

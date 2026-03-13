@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import { FileCheck, Building2, Landmark, CheckCircle } from "lucide-react";
 import CTASection from "@/components/CTASection";
+
+export const metadata: Metadata = {
+  title: "Services | Bricks Infraspace - Turnkey Contracting, Consultancy & Heritage Restoration",
+  description:
+    "Explore our construction services: turnkey contracting with single-point responsibility, construction consultancy from concept to completion, and heritage restoration with TDR generation in Ahmedabad, Gujarat.",
+  openGraph: {
+    title: "Our Services | Bricks Infraspace",
+    description:
+      "Turnkey contracting, construction consultancy, and heritage restoration with TDR generation. End-to-end construction solutions in Ahmedabad, Gujarat.",
+  },
+};
 
 const services = [
   {
