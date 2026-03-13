@@ -4,8 +4,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const basePath = process.env.NODE_ENV === "production" ? "/BricksInfraspaceWebsite" : "";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -17,19 +15,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bricksinfraspace.com"),
   title: "Bricks Infraspace - Building Better Tomorrow",
-  description: "A comprehensive construction consultancy and turnkey contracting firm with decades of experience delivering reliable, compliant, and end-to-end construction solutions.",
+  description:
+    "A comprehensive construction consultancy and turnkey contracting firm with decades of experience delivering reliable, compliant, and end-to-end construction solutions.",
   icons: {
-    icon: `${basePath}/logo.jpeg`,
-    shortcut: `${basePath}/logo.jpeg`,
-    apple: `${basePath}/logo.jpeg`,
+    icon: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg",
   },
   openGraph: {
     title: "Bricks Infraspace - Building Better Tomorrow",
-    description: "A comprehensive construction consultancy and turnkey contracting firm with decades of experience delivering reliable, compliant, and end-to-end construction solutions.",
+    description:
+      "A comprehensive construction consultancy and turnkey contracting firm with decades of experience delivering reliable, compliant, and end-to-end construction solutions.",
     images: [
       {
-        url: `${basePath}/logo.jpeg`,
+        url: "/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Bricks Infraspace Logo",
@@ -40,9 +41,20 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bricks Infraspace - Building Better Tomorrow",
-    description: "A comprehensive construction consultancy and turnkey contracting firm with decades of experience delivering reliable, compliant, and end-to-end construction solutions.",
-    images: [`${basePath}/logo.jpeg`],
+    description:
+      "A comprehensive construction consultancy and turnkey contracting firm with decades of experience delivering reliable, compliant, and end-to-end construction solutions.",
+    images: ["/logo.jpeg"],
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Bricks Infraspace",
+  url: "https://bricksinfraspace.com",
+  logo: "https://bricksinfraspace.com/logo.jpeg",
+  description:
+    "A comprehensive construction consultancy and turnkey contracting firm with decades of experience delivering reliable, compliant, and end-to-end construction solutions.",
 };
 
 export default function RootLayout({
@@ -52,6 +64,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
