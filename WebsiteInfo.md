@@ -34,7 +34,7 @@ We are a one-stop construction consultancy and turnkey contracting firm deliveri
 Our Journey
 Founded with a vision to simplify construction processes
 35+ years of collective group experience
-25+ million sq. ft. of built space delivered
+5+ million sq. ft. of built space delivered
 Founder & Leadership - Preet Doshi  ( photo )
 With over three decades of experience in real estate and infrastructure, the founder established the firm with a vision to deliver quality-driven, transparent, and reliable construction solutions. Their leadership and technical expertise continue to guide the company’s growth and long-term client relationships.
 Our Mission To deliver reliable, sustainable, and value‑driven construction solutions while maintaining the highest standards of quality and professionalism.

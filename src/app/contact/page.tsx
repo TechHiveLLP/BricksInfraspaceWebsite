@@ -1,23 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, X } from "lucide-react";
+
+const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/PCZMEBDJFzbg13Tr6";
 
 const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
     details: ["603 Shapath 5, Opp Karnavati Club, Sarkhej - Gandhinagar Hwy, Ahmedabad, Gujarat, 380060"],
+    link: GOOGLE_MAPS_URL,
   },
   {
     icon: Phone,
     title: "Call Us",
     details: ["+91 89800 37007"],
+    link: "tel:+918980037007",
   },
   {
     icon: Mail,
     title: "Email Us",
     details: ["bricksinfraspace@gmail.com"],
+    link: "mailto:bricksinfraspace@gmail.com",
   },
   // {
   //   icon: Clock,
@@ -64,9 +69,8 @@ export default function ContactPage() {
       if (result.success) {
         setSubmitted(true);
         setFormData({ name: "", email: "", phone: "", message: "" });
-        setTimeout(() => setSubmitted(false), 5000);
       } else {
-        setError("Something went wrong. Please try again or email us directly.");
+        setError("Something went wrong. Please try again or email us directly at bricksinfraspace@gmail.com");
       }
     } catch {
       setError("Failed to send message. Please check your internet connection and try again.");
@@ -105,22 +109,41 @@ export default function ContactPage() {
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6">
-                {contactInfo.map((info, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-50 rounded-xl p-6"
-                  >
-                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                      <info.icon className="text-red-700" size={24} />
+                {contactInfo.map((info, index) => {
+                  const content = (
+                    <>
+                      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <info.icon className="text-red-700" size={24} />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                        {info.title}
+                      </h3>
+                      {info.details.map((detail, i) => (
+                        <p key={i} className="text-gray-600">{detail}</p>
+                      ))}
+                    </>
+                  );
+
+                  const isExternal = "link" in info && info.link?.startsWith("http");
+
+                  return "link" in info && info.link ? (
+                    <a
+                      key={index}
+                      href={info.link}
+                      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors block"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div
+                      key={index}
+                      className="bg-gray-50 rounded-xl p-6"
+                    >
+                      {content}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {info.title}
-                    </h3>
-                    {info.details.map((detail, i) => (
-                      <p key={i} className="text-gray-600">{detail}</p>
-                    ))}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
@@ -131,10 +154,17 @@ export default function ContactPage() {
               </h3>
 
               {submitted && (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-start justify-between gap-3">
                   <p className="text-green-700 font-medium">
                     Thank you! Your message has been sent. We&apos;ll get back to you soon.
                   </p>
+                  <button
+                    type="button"
+                    onClick={() => setSubmitted(false)}
+                    className="text-green-600 hover:text-green-800 transition-colors flex-shrink-0 mt-0.5"
+                  >
+                    <X size={18} />
+                  </button>
                 </div>
               )}
 

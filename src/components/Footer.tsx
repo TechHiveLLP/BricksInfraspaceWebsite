@@ -83,9 +83,14 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-red-400 shrink-0 mt-1" />
-                <span className="text-gray-200">
+                <a
+                  href="https://maps.app.goo.gl/PCZMEBDJFzbg13Tr6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-200 hover:text-red-400 transition-colors"
+                >
                   603 Shapath 5, Opp Karnavati Club, Sarkhej - Gandhinagar Hwy, Ahmedabad, Gujarat, 380060
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-red-400 shrink-0" />

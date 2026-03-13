@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 
 const highlights = [
   "35+ years of group experience",
-  "25+ million sq. ft. delivered",
+  "5+ million sq. ft. delivered",
   "Residential, Commercial & Infrastructure",
   "End-to-end construction solutions",
 ];

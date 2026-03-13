@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Send, Linkedin, Users, Target, Heart, Lightbulb, Shield } from "lucide-react";
+import { Mail, Send, Linkedin, Users, Target, Heart, Lightbulb, Shield, X } from "lucide-react";
 
 const values = [
   {
@@ -64,7 +64,6 @@ export default function CareersPage() {
       if (result.success) {
         setSubmitted(true);
         setFormData({ fullName: "", email: "", phone: "", linkedin: "" });
-        setTimeout(() => setSubmitted(false), 5000);
       } else {
         setError("Something went wrong. Please try again or email us directly at bricksinfra.hr@gmail.com");
       }
@@ -200,10 +199,17 @@ export default function CareersPage() {
 
           <div className="bg-gray-50 rounded-2xl p-8">
             {submitted && (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                <p className="text-green-700 font-medium text-center">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-start justify-between gap-3">
+                <p className="text-green-700 font-medium text-center flex-1">
                   Thank you for your application! Our HR team will review it and get back to you soon.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="text-green-600 hover:text-green-800 transition-colors flex-shrink-0 mt-0.5"
+                >
+                  <X size={18} />
+                </button>
               </div>
             )}
 

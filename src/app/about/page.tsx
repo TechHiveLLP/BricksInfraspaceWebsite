@@ -13,7 +13,7 @@ const values = [
 
 const journey = [
   { value: "35+", label: "Years Experience" },
-  { value: "25M+", label: "Sq. Ft. Delivered" },
+  { value: "5M+", label: "Sq. Ft. Delivered" },
 ];
 
 export default function AboutPage() {

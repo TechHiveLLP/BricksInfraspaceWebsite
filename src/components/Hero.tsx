@@ -3,7 +3,7 @@ import { ArrowRight, Building2, Award } from "lucide-react";
 
 const stats = [
   { icon: Award, value: "35+", label: "Years Experience" },
-  { icon: Building2, value: "25M+", label: "Sq. Ft. Delivered" },
+  { icon: Building2, value: "5M+", label: "Sq. Ft. Delivered" },
 ];
 
 export default function Hero() {
