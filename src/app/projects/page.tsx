@@ -148,14 +148,7 @@ export default function ProjectsPage() {
                 </div>
                 <div className="p-6">
                   <span className="text-red-700 text-sm font-medium">{project.type}</span>
-                  <h3 className="text-gray-900 font-bold text-xl mt-1 mb-4">{project.name}</h3>
-                  <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
-                    <div
-                      className="bg-red-700 h-3 rounded-full"
-                      style={{ width: `${project.progress ?? 0}%` }}
-                    />
-                  </div>
-                  <span className="text-gray-500 text-sm">{project.progress ?? 0}% Complete</span>
+                  <h3 className="text-gray-900 font-bold text-xl mt-1">{project.name}</h3>
                 </div>
               </div>
               );

@@ -55,17 +55,18 @@ export default function ProjectsSection() {
             {featuredOngoing.map((project, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-xl p-6"
+                className="group relative rounded-xl overflow-hidden"
               >
-                <span className="text-red-700 text-sm font-medium">{project.type}</span>
-                <h4 className="text-gray-900 font-bold text-lg mt-1 mb-4">{project.name}</h4>
-                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                  <div 
-                    className="bg-red-700 h-2 rounded-full" 
-                    style={{ width: `${project.progress ?? 0}%` }}
-                  />
+                <img
+                  src={getProjectCover(project)}
+                  alt={project.name}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="text-red-400 text-sm font-medium">{project.type}</span>
+                  <h4 className="text-white font-bold text-lg">{project.name}</h4>
                 </div>
-                <span className="text-gray-500 text-sm">{project.progress ?? 0}% Complete</span>
               </div>
             ))}
           </div>

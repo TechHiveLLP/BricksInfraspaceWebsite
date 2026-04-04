@@ -10,7 +10,6 @@ export type Project = {
   type: string;
   status: "completed" | "ongoing";
   featured: boolean; // shown on homepage preview
-  progress?: number; // 0-100, only for ongoing projects
 };
 
 // ─── Completed Projects ─────────────────────────────────────────────
@@ -62,7 +61,6 @@ export const ongoingProjects: Project[] = [
     type: "Residential",
     status: "ongoing",
     featured: true,
-    progress: 60,
   },
   {
     key: "dutron-ongoing",
@@ -70,7 +68,6 @@ export const ongoingProjects: Project[] = [
     type: "Commercial",
     status: "ongoing",
     featured: true,
-    progress: 85,
   },
   {
     key: "shivalik",
@@ -78,7 +75,6 @@ export const ongoingProjects: Project[] = [
     type: "Institutional",
     status: "ongoing",
     featured: true,
-    progress: 90,
   },
   {
     key: "suryam-waters",
@@ -86,7 +82,6 @@ export const ongoingProjects: Project[] = [
     type: "Residential",
     status: "ongoing",
     featured: false,
-    progress: 10,
   },
   {
     key: "sage-repose",
@@ -94,7 +89,6 @@ export const ongoingProjects: Project[] = [
     type: "Residential",
     status: "ongoing",
     featured: false,
-    progress: 40,
   },
   {
     key: "anantbaug",
@@ -102,7 +96,6 @@ export const ongoingProjects: Project[] = [
     type: "Residential",
     status: "ongoing",
     featured: false,
-    progress: 0,
   },
   {
     key: "anantbaug-2",
@@ -110,7 +103,6 @@ export const ongoingProjects: Project[] = [
     type: "Residential",
     status: "ongoing",
     featured: false,
-    progress: 0,
   },
 ];
 
