@@ -13,22 +13,21 @@ export default function AboutSection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Images */}
+          {/* Video Reel */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Construction site"
-                className="rounded-lg w-full h-64 object-cover"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Completed building"
-                className="rounded-lg w-full h-64 object-cover mt-8"
-              />
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                className="w-full aspect-video object-cover"
+                controls
+                playsInline
+                poster="/videos/hero-poster.jpg"
+              >
+                <source src="/videos/hero-reel.mp4" type="video/mp4" />
+                Your browser does not support video playback.
+              </video>
             </div>
             {/* Experience Badge */}
-            <div className="absolute bottom-4 left-4 bg-red-700 text-white rounded-lg p-6 shadow-xl">
+            <div className="absolute -bottom-4 -right-4 bg-red-700 text-white rounded-lg p-6 shadow-xl">
               <span className="text-4xl font-bold">35+</span>
               <span className="block text-red-100">Years Experience</span>
             </div>

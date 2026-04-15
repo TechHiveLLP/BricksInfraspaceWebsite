@@ -41,3 +41,6 @@ next-env.d.ts
 .vscode
 *.swp
 *.swo
+
+# Source video files (large, not web-optimized)
+public/video for website/
